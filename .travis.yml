@@ -1,0 +1,32 @@
+dist: trusty
+sudo: require
+language: cpp
+compiler: gcc
+
+addons:
+  apt:
+    source: 
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-6
+      - g++-6
+      - cmake
+
+before_script:
+  - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
+  - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
+  - export CXX=/usr/bin/g++-6
+  - gcc -v && g++ -v && cmake --version
+  - wget https://curl.haxx.se/download/curl-7.59.0.tar.gz
+  - tar xf curl-7.59.0.tar.gz
+  - cd curl-7.59.0
+  - ./configure --disable-shared --enable-static --prefix=../temp --disable-ldap --disable-sspi --with-ssl
+  - make && make install
+  - cp -r temp/lib/* lib/
+  - cp -r temp/include/* include/
+  - rm -rf temp curl-7.59.*
+
+script:
+  - mkdir build 
+  - cd build
+  - cmake .. & make
