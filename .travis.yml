@@ -12,7 +12,7 @@ addons:
       - g++-6
       - cmake
 
-before_script:
+script:
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
   - export CXX=/usr/bin/g++-6
@@ -25,8 +25,6 @@ before_script:
   - cp -r temp/lib/* lib/
   - cp -r temp/include/* include/
   - rm -rf temp curl-7.59.*
-
-script:
   - mkdir build 
   - cd build
   - cmake .. & make
