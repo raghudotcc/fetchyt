@@ -3,9 +3,6 @@
 A word play with "fetch it" and "fetch yt (youtube)". 
 A utility written in c++ to fetch youtube url from fmt encoded url stream map.
 
-***Dependency:***
-`libcurl` - Already been taken care of
-
 ***Building from Source:***
 1. run `cmake`
 2. run `make`
