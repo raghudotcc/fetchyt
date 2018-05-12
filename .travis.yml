@@ -29,4 +29,4 @@ script:
   - sudo rm -rf $HOME/bin $HOME/lib $HOME/include curl-7.59.*
   - mkdir build 
   - cd build
-  - cmake .. & make
+  - cmake .. && make
