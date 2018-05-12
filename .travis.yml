@@ -21,11 +21,12 @@ script:
   - wget https://curl.haxx.se/download/curl-7.59.0.tar.gz
   - tar xf curl-7.59.0.tar.gz
   - cd curl-7.59.0
-  - sudo ./configure --disable-shared --enable-static -disable-ldap --disable-sspi --with-ssl
+  - sudo ./configure --disable-shared --enable-static -disable-ldap --disable-sspi --with-ssl --prefix=$HOME
   - sudo make && make install
-  - sudo cp -r /usr/local/curl/lib/* lib/
-  - sudo cp -r /usr/local/curl/include/* include/
-  - sudo rm -rf /usr/local/curl curl-7.59.*
+  - cd ..
+  - sudo cp -r $HOME/lib/* lib/
+  - sudo cp -r $HOME/include/* include/
+  - sudo rm -rf $HOME/bin $HOME/lib $HOME/include curl-7.59.*
   - mkdir build 
   - cd build
   - cmake .. & make
