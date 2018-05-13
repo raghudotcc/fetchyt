@@ -11,10 +11,13 @@ addons:
       - gcc-6
       - g++-6
       - cmake
+      - build-essential
       - zlib1g-dev
       - libc-ares-dev
       - libssh2-1-dev
-      - nghttp2
+      - nghttp2 
+      - libnghttp2-dev 
+      - libssl-dev
       - openssl
 script:
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
