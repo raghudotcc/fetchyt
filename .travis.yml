@@ -11,6 +11,10 @@ addons:
       - gcc-6
       - g++-6
       - cmake
+      - zlib1g-dev
+      - libc-ares-dev
+      - libssh2-1-dev
+      - nghttp2
       - openssl
 script:
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
@@ -21,7 +25,7 @@ script:
   - wget https://curl.haxx.se/download/curl-7.59.0.tar.gz
   - tar xf curl-7.59.0.tar.gz
   - cd curl-7.59.0
-  - sudo ./configure --disable-shared --enable-static -disable-ldap --disable-sspi --with-ssl --prefix=$HOME
+  - ./configure --prefix=$HOME --enable-static --disable-sspi --disable-dict --disable-ftp --disable-imap --disable-ldap --disable-ldaps --disable-pop3 --disable-proxy --disable-rtsp --disable-shared --disable-smtp --disable-telnet --disable-tftp --disable-zlib --without-ca-bundle --without-gnutls --without-libidn --without-librtmp --without-libssh2 --without-nss --with-ssl --without-zlib
   - sudo make && make install
   - cd ..
   - sudo cp -r $HOME/lib/* lib/
