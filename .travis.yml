@@ -12,7 +12,13 @@ addons:
       - g++-6
       - cmake
       - curl
-      - libcurl4
+      - build-essential
+      - zlib1g-dev
+      - libc-ares-dev
+      - libssh2-1-dev
+      - openssl
+      - libssl-dev
+      - gnutls-bin
 script:
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
