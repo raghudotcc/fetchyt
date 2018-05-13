@@ -11,28 +11,14 @@ addons:
       - gcc-6
       - g++-6
       - cmake
-      - build-essential
-      - zlib1g-dev
-      - libc-ares-dev
-      - libssh2-1-dev
-      - openssl
-      - libssl-dev
-      - gnutls-bin
+      - curl
+      - libcurl4
 script:
   - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
   - export CC=/usr/bin/gcc-6
   - export CXX=/usr/bin/g++-6
   - gcc -v && g++ -v && cmake --version
-  - wget https://curl.haxx.se/download/curl-7.59.0.tar.gz
-  - tar xf curl-7.59.0.tar.gz
-  - cd curl-7.59.0
-  - ./configure --prefix=$HOME --enable-static --disable-sspi --disable-dict --disable-ftp --disable-imap --disable-ldap --disable-ldaps --disable-pop3 --disable-proxy --disable-rtsp --disable-shared --disable-smtp --disable-telnet --disable-tftp --disable-zlib --without-ca-bundle --without-gnutls --without-libidn --without-librtmp --without-libssh2 --without-nss --with-ssl --without-zlib
-  - sudo make && make install
-  - cd ..
-  - sudo cp -r $HOME/lib/* lib/
-  - sudo cp -r $HOME/include/* include/
-  - sudo rm -rf $HOME/bin $HOME/lib $HOME/include curl-7.59.*
   - mkdir build 
   - cd build
   - cmake .. && make
