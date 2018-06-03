@@ -1,5 +1,3 @@
-[![Language CPP](https://img.shields.io/badge/Language-C%2B%2B-green.svg)](https://isocpp.org/)
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/raghu-veer/fetchyt/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/raghu-veer/fetchyt.svg?branch=master)](https://travis-ci.org/raghu-veer/fetchyt)
 ## fetchyt
 A word play with "fetch it" and "fetch yt (youtube)". 
