@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/raghu-veer/fetchyt.svg?branch=master)](https://travis-ci.org/raghu-veer/fetchyt)
+[![Build Status](https://travis-ci.org/Optimaton/fetchyt.svg?branch=master)](https://travis-ci.org/Optimaton/fetchyt)
 ## fetchyt
 A word play with "fetch it" and "fetch yt (youtube)". 
 A utility written in c++ to fetch youtube url from fmt encoded url stream map.
